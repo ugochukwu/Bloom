@@ -24,16 +24,32 @@ import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 
 val Nunito = FontFamily(
-    Font(
-        R.font.nunito_sans
-    )
+    Font(R.font.nunito_sans),
+    Font(weight = FontWeight.Bold, resId = R.font.nunitosans_bold),
+    Font(weight = FontWeight.Light, resId = R.font.nunitosans_light),
+    Font(weight = FontWeight.SemiBold, resId = R.font.nunitosans_semibold)
 )
 
 // Set of Material typography styles to start with
 val typography = Typography(
+    h1 = TextStyle(fontFamily = Nunito,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp),
+    h2 = TextStyle(fontFamily = Nunito,
+        fontWeight = FontWeight.Bold,
+        letterSpacing = 0.15.sp),
+    subtitle1 = TextStyle(fontFamily = Nunito, letterSpacing = 0.15.sp, fontSize = 14.sp),
     body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
-    )
+        fontFamily = Nunito,
+        fontWeight = FontWeight.Light,
+        fontSize = 16.sp),
+    body2 = TextStyle(
+        fontFamily = Nunito,
+        fontWeight = FontWeight.Light,
+        fontSize = 16.sp),
+    button = TextStyle(fontFamily = Nunito,
+        fontWeight = FontWeight.SemiBold),
+    caption = TextStyle(fontFamily = Nunito,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 12.sp)
 )
