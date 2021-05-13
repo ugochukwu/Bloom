@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.ui.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -11,10 +11,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.androiddevchallenge.bloomLogoRessource
-import com.example.androiddevchallenge.logoResource
 import com.example.androiddevchallenge.ui.components.SignUpButton
-import com.example.androiddevchallenge.welcomeBackgroundResource
+import com.example.androiddevchallenge.ui.components.bloomLogoRessource
+import com.example.androiddevchallenge.ui.components.logoResource
+import com.example.androiddevchallenge.ui.components.welcomeBackgroundResource
+import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.pink900
 
 @Composable
 fun WelcomeScreen() {

@@ -18,12 +18,10 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.login.LoginScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import com.example.androiddevchallenge.ui.theme.WelcomeScreen
+import com.example.androiddevchallenge.ui.welcome.WelcomeScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,15 +55,3 @@ fun DarkPreview() {
         MyApp()
     }
 }
-
-@Composable
-fun logoResource() =
-    if (MaterialTheme.colors.isLight) R.drawable.ic_light_welcome_illos else R.drawable.ic_dark_welcome_illos
-
-@Composable
-fun welcomeBackgroundResource() =
-    if (MaterialTheme.colors.isLight) R.drawable.ic_light_welcome_bg else R.drawable.ic_dark_welcome_bg
-
-@Composable
-fun bloomLogoRessource() =
-    if (MaterialTheme.colors.isLight) R.drawable.ic_light_logo else R.drawable.ic_dark_logo
