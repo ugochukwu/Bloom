@@ -22,7 +22,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-private val LightColorPalette = darkColors(
+private val LightColorPalette = lightColors(
     primary = pink100,
     secondary = pink900,
     background = Color.White,
@@ -33,7 +33,7 @@ private val LightColorPalette = darkColors(
     onSurface = gray
 )
 
-private val DarkColorPalette = lightColors(
+private val DarkColorPalette = darkColors(
     primary = green900,
     secondary = green300,
     background = gray,

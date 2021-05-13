@@ -60,12 +60,12 @@ fun DarkPreview() {
 
 @Composable
 fun logoResource() =
-    if (MaterialTheme.colors.isLight) R.drawable.ic_dark_welcome_illos else R.drawable.ic_light_welcome_illos
+    if (MaterialTheme.colors.isLight) R.drawable.ic_light_welcome_illos else R.drawable.ic_dark_welcome_illos
 
 @Composable
 fun welcomeBackgroundResource() =
-    if (MaterialTheme.colors.isLight) R.drawable.ic_dark_welcome_bg else R.drawable.ic_light_welcome_bg
+    if (MaterialTheme.colors.isLight) R.drawable.ic_light_welcome_bg else R.drawable.ic_dark_welcome_bg
 
 @Composable
 fun bloomLogoRessource() =
-    if (MaterialTheme.colors.isLight) R.drawable.ic_dark_logo else R.drawable.ic_light_logo
+    if (MaterialTheme.colors.isLight) R.drawable.ic_light_logo else R.drawable.ic_dark_logo
