@@ -9,7 +9,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.AnnotatedString.*
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.components.LoginButton
@@ -49,7 +53,7 @@ fun LoginScreen() {
                     .height(56.dp)
             )
             Text(
-                text = "By clicking below, you agree to our Terms of Use and consent to our Privacy Policy",
+                text = legalInfo(),
                 modifier = Modifier
                     .fillMaxWidth()
                     .paddingFromBaseline(top = 24.dp, bottom = 16.dp),
@@ -59,6 +63,28 @@ fun LoginScreen() {
 
         }
     }
+}
+
+@Composable
+private fun legalInfo(): AnnotatedString {
+    val text = "By clicking below, you agree to our Terms of Use and consent to our Privacy Policy"
+    val termsOfUseStartIdx = text.indexOfFirst { it == 'T' }
+    val privacyPolicyIdx = text.indexOfFirst { it == 'P' }
+    return AnnotatedString(
+        text,
+        spanStyles = listOf(
+            Range(
+                SpanStyle(textDecoration = TextDecoration.Underline),
+                start = termsOfUseStartIdx,
+                end = termsOfUseStartIdx + 10
+            ),
+            Range(
+                SpanStyle(textDecoration = TextDecoration.Underline),
+                start = privacyPolicyIdx,
+                end = text.length
+            )
+        )
+    )
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
