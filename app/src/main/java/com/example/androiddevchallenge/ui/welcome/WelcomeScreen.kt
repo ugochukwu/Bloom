@@ -54,7 +54,6 @@ fun WelcomeScreen() {
                     modifier = Modifier
                         .paddingFromBaseline(top = 32.sp)
                 )
-
                 SignUpButton(
                     onClick = {},
                     modifier = Modifier.padding(
@@ -66,7 +65,7 @@ fun WelcomeScreen() {
                 )
                 TextButton(
                     onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.textButtonColors(contentColor = if (MaterialTheme.colors.isLight) Color.White else pink900)
+                    colors = ButtonDefaults.textButtonColors(contentColor = if (MaterialTheme.colors.isLight) pink900 else Color.White)
                 ) {
                     Text("Log In")
                 }
