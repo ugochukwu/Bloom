@@ -20,6 +20,11 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.androiddevchallenge.ui.login.LoginScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.welcome.WelcomeScreen
 
@@ -28,7 +33,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp()
+                val navController = rememberNavController()
+                BloomNavHost(navController)
+            }
+        }
+    }
+
+    @Composable
+    private fun BloomNavHost(navController: NavHostController) {
+        NavHost(navController = navController,
+            startDestination = BloomDestinations.Welcome.name) {
+            composable(BloomDestinations.Welcome.name) {
+                WelcomeScreen(onLoginClick = { navController.navigate(BloomDestinations.Login.name) })
+            }
+            composable(BloomDestinations.Login.name) {
+                LoginScreen()
             }
         }
     }
@@ -37,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    WelcomeScreen()
+    LoginScreen()
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
@@ -54,4 +73,8 @@ fun DarkPreview() {
     MyTheme(darkTheme = true) {
         MyApp()
     }
+}
+
+enum class BloomDestinations {
+    Welcome, Login
 }

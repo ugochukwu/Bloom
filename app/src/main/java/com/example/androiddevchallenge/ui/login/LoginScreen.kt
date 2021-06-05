@@ -25,7 +25,7 @@ fun LoginScreen() {
         color = MaterialTheme.colors.background,
         modifier = Modifier.fillMaxSize()
     ) {
-        var emailAddress by remember { mutableStateOf("") }
+        val emailAddress by remember { mutableStateOf("") }
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(horizontal = 16.dp)

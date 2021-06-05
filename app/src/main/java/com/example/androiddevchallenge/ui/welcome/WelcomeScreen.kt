@@ -19,7 +19,7 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.pink900
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(onLoginClick: () -> Unit) {
     Surface(
         color = MaterialTheme.colors.primary, modifier = Modifier
             .fillMaxSize()
@@ -64,7 +64,7 @@ fun WelcomeScreen() {
                     )
                 )
                 TextButton(
-                    onClick = { /*TODO*/ },
+                    onClick = { onLoginClick() },
                     colors = ButtonDefaults.textButtonColors(contentColor = if (MaterialTheme.colors.isLight) pink900 else Color.White)
                 ) {
                     Text("Log In")
@@ -78,7 +78,7 @@ fun WelcomeScreen() {
 @Composable
 fun LightPreview() {
     MyTheme {
-        WelcomeScreen()
+        WelcomeScreen(onLoginClick = {})
     }
 }
 
@@ -86,6 +86,6 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        WelcomeScreen()
+        WelcomeScreen(onLoginClick = {})
     }
 }
