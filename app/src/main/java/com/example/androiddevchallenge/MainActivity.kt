@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 WelcomeScreen(onLoginClick = { navController.navigate(BloomDestinations.Login.name) })
             }
             composable(BloomDestinations.Login.name) {
-                LoginScreen()
+                LoginScreen(onLoginClick = {/*TODO Navigate to the homescreen*/ })
             }
         }
     }
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    LoginScreen()
+    LoginScreen(onLoginClick = {})
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)

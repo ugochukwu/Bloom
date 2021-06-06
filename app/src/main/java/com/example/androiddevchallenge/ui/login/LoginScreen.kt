@@ -5,7 +5,6 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,7 +19,7 @@ import com.example.androiddevchallenge.ui.components.LoginButton
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(onLoginClick: () -> Unit) {
     Surface(
         color = MaterialTheme.colors.background,
         modifier = Modifier.fillMaxSize()
@@ -59,7 +58,7 @@ fun LoginScreen() {
                     .paddingFromBaseline(top = 24.dp, bottom = 16.dp),
                 textAlign = TextAlign.Center
             )
-            LoginButton(onClick = {})
+            LoginButton(onClick = { onLoginClick() })
 
         }
     }
@@ -91,7 +90,7 @@ private fun legalInfo(): AnnotatedString {
 @Composable
 fun LightLoginScreenPreview() {
     MyTheme {
-        LoginScreen()
+        LoginScreen(onLoginClick = {})
     }
 }
 
@@ -99,6 +98,6 @@ fun LightLoginScreenPreview() {
 @Composable
 fun DarkLoginScreenPreview() {
     MyTheme(darkTheme = true) {
-        LoginScreen()
+        LoginScreen(onLoginClick = {})
     }
 }
